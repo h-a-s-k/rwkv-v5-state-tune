@@ -440,6 +440,9 @@ def train_model(
 
     # load training data
     jsonl = [json.loads(x) for x in openfile.readlines()]
+    
+    prompt_cutoff = int(prompt_cutoff)
+    completion_cutoff = int(completion_cutoff)
 
     # encode prompt data
     tasks = [
